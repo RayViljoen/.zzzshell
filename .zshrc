@@ -14,6 +14,13 @@ PROMPT=$'\n'"%B%F{black}%~ "$'\n'"%B%F{green}>%f%b "
 # ALIASES
 #################################################################
 
+alias zzzshelledit="e ~/.zshrc"
+alias zzzshellreload="source ~/.zshrc"
+alias zzzshellgoto="cd ~/.zzzshell/"
+
+# Allow application past gatekeeper
+alias gatekeeperallow="spctl --add"
+
 alias atom="/Applications/Atom.app/Contents/Resources/app/atom.sh"
 alias code="/Applications/Visual\ Studio\ Code.app/Contents/Resources/app/bin/code"
 alias e="code"
@@ -44,7 +51,7 @@ alias gamend="git commit --amend -m"
 
 # Apache
 alias hosts="e /etc/hosts"
-alias vhosts="e /usr/local/etc/apache2/2.4/extra/httpd-vhosts.conf"
+alias vhosts="e /etc/apache2/extra/httpd-vhosts.conf"
 
 # Processes
 alias pfind="ps aux | grep"
