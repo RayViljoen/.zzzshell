@@ -1,3 +1,9 @@
+autoload -U compinit && compinit
+zstyle ':completion:*' matcher-list '' 'm:{[:lower:][:upper:]}={[:upper:][:lower:]}' \ '+l:|?=** r:|?=**'
+
+autoload -U history-search-end
+bindkey "^[[A" history-beginning-search-backward
+bindkey "^[[B" history-beginning-search-forward
 
 # TERMINAL PRMOPT
 PROMPT=$'\n'"%B%F{black}%~ "$'\n'"%B%F{green}>%f%b "
