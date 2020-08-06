@@ -1,6 +1,10 @@
-autoload -U compinit && compinit
-zstyle ':completion:*' matcher-list '' 'm:{[:lower:][:upper:]}={[:upper:][:lower:]}' \ '+l:|?=** r:|?=**'
 
+# Configure autocomplete
+# case insensitive path-completion
+zstyle ':completion:*' matcher-list 'm:{[:lower:][:upper:]}={[:upper:][:lower:]}' 'm:{[:lower:][:upper:]}={[:upper:][:lower:]} l:|=* r:|=*' 'm:{[:lower:][:upper:]}={[:upper:][:lower:]} l:|=* r:|=*' 'm:{[:lower:][:upper:]}={[:upper:][:lower:]} l:|=* r:|=*'
+autoload -U compinit && compinit
+
+# Configure history completion
 autoload -U history-search-end
 bindkey "^[[A" history-beginning-search-backward
 bindkey "^[[B" history-beginning-search-forward
@@ -12,7 +16,7 @@ PROMPT=$'\n'"%B%F{black}%~ "$'\n'"%B%F{green}>%f%b "
 # DO ANY REPEAT SETUPS HERE
 
 # Add keys to SSH agent
-# ssh-add
+ssh-add
 
 ##########################################
 
