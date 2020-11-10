@@ -1,4 +1,11 @@
 
+# $PATH tuning
+export PATH="/usr/local/opt/php@7.3/bin:$PATH"
+export PATH="/usr/local/opt/php@7.3/sbin:$PATH"
+
+# Fix % bug when terminal starts
+unsetopt PROMPT_SP
+
 # Configure autocomplete
 # case insensitive path-completion
 zstyle ':completion:*' matcher-list 'm:{[:lower:][:upper:]}={[:upper:][:lower:]}' 'm:{[:lower:][:upper:]}={[:upper:][:lower:]} l:|=* r:|=*' 'm:{[:lower:][:upper:]}={[:upper:][:lower:]} l:|=* r:|=*' 'm:{[:lower:][:upper:]}={[:upper:][:lower:]} l:|=* r:|=*'
@@ -54,7 +61,7 @@ alias gc="git commit -v -m"
 alias gm="git merge"
 alias gb="git branch"
 alias gco="git checkout"
-alias gp="bd_git_push"
+alias gp="git push"
 alias gpl="git pull --rebase"
 alias gr="git reset HEAD"
 alias gamend="git commit --amend -m"
@@ -94,15 +101,6 @@ alias hide="defaults write com.apple.finder AppleShowAllFiles NO && killall Find
 #################################################################
 # FUNCTIONS
 #################################################################
-
-# Git push
-function bd_git_push() {
-	if [ "$1" ]; then # Check if not master
-		git push origin $1
-	else # Default master
-		git push origin master
-	fi
-}
 
 # Git add
 function bd_git_add() {
