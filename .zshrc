@@ -1,8 +1,10 @@
-
 # $PATH tuning
-export PATH="/usr/local/opt/php@7.3/bin:$PATH"
-export PATH="/usr/local/opt/php@7.3/sbin:$PATH"
-
+# export PATH="/usr/local/opt/php@7.4/bin:$PATH"
+# export PATH="/usr/local/opt/php@7.4/sbin:$PATH"
+export PATH="/opt/homebrew/opt/php@7.4/bin:$PATH"
+export PATH="/opt/homebrew/opt/php@7.4/sbin:$PATH"
+export PATH="/opt/homebrew/bin:$PATH"
+export PATH="/Users/rayviljoen/.pyenv/versions/2.7.18/bin:$PATH"
 # Fix % bug when terminal starts
 unsetopt PROMPT_SP
 
@@ -34,6 +36,11 @@ ssh-add
 alias zzzshelledit="e ~/.zshrc"
 alias zzzshellreload="source ~/.zshrc"
 alias zzzshellgoto="cd ~/.zzzshell/"
+
+# Make brew work in x86 mode (Not ARM)
+# Be sure to install brew for x86 also
+# See https://gist.github.com/progrium/b286cd8c82ce0825b2eb3b0b3a0720a0
+# alias brew="arch -x86_64 brew"
 
 # Allow application past gatekeeper
 alias gatekeeperallow="spctl --add"
@@ -67,8 +74,8 @@ alias gr="git reset HEAD"
 alias gamend="git commit --amend -m"
 
 # Apache
-alias hosts="e /etc/hosts"
-alias vhosts="e /etc/apache2/extra/httpd-vhosts.conf"
+alias hosts="sudo vi /etc/hosts"
+alias vhosts="e /opt/homebrew/etc/nginx/"
 
 # Processes
 alias pfind="ps aux | grep"
